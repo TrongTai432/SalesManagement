@@ -1,0 +1,71 @@
+﻿@model SV20T1020091.DomainModels.Supplier
+@{
+
+    ViewBag.Title = "Xóa Nhà Cung Cấp";
+
+}
+
+<div class="box box-danger">
+    <div class="box-body">
+        <form action="~/Supplier/Delete/@Model.SupplierID" method="post">
+
+            <div class="form-group">
+                <label>Tên Nhà Cung Cấp :</label>
+                <p class="form-control-static">@Model.SupplierName</p>
+            </div>
+
+            <div class="form-group">
+                <label>Tên Giao Dịch :</label>
+                <p class="form-control-static">@Model.ContactName</p>
+            </div>
+
+
+            <div class="form-group">
+                <label>Điện Thoại :</label>
+                <p class="form-control-static">@Model.Phone</p>
+            </div>
+
+
+            <div class="form-group">
+                <label>Email :</label>
+                <p class="form-control-static">@Model.Email</p>
+            </div>
+
+
+            <div class="form-group">
+                <label>Địa Chỉ :</label>
+                <p class="form-control-static">@Model.Address</p>
+            </div>
+
+
+            <div class="form-group">
+                <label>Tỉnh Thành :</label>
+                <p class="form-control-static">@Model.Province</p>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <label>Trạng Thái :</label>
+                <p class="form-control-static"></>
+            </div>
+            <div class="form-group">
+                @if (!SV20T1020091.BusinessLayers.CommonDataService.IsUsedSupplier(Model.SupplierID))
+                {
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fa-fa-floppy-o"> </i> Xóa Dữ Liệu
+                    </button>
+                }
+                <a href="~/Supplier" class="btn btn-default">
+                    Quay Lại
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
